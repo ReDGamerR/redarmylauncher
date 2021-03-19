@@ -1,0 +1,90 @@
+<ServerListEntry@BoxLayout>:
+    size_hint: 1, None
+    height: contents.height
+
+    HoverButtonLeft:
+        id: contents
+        on_release: root.clicked(*args)
+        font_size: 14
+
+        text_prefix: ''
+
+        BoxLayout:
+            size_hint: None, None
+            size: contents.size
+            x: contents.x
+            y: contents.y
+
+            padding: 20, 0
+            spacing: 10
+
+
+            Label:
+                id: server_name
+                text: contents.text
+                font_size: contents.font_size
+                font_name: contents.font_name
+                padding_y: contents.padding_y
+                color: contents.color
+
+                size_hint: 1, None
+                height: self.texture_size[1]
+                text_size: self.width, contents.height
+                shorten: True
+
+
+            Label:
+                id: server_players
+                font_size: contents.font_size
+                font_name: contents.font_name
+                padding_y: contents.padding_y
+                color: contents.color
+
+                size_hint: None, None
+                size: self.texture_size
+
+                text: ''
+                text_size: None, contents.height
+
+<ServerListScrolled@ScrollView+HoverBehavior>:
+    size_hint: None, None
+    max_height: 300
+    height: min(self.max_height, servers_list.height)
+
+    bar_width: 12
+    scroll_timeout: 100
+    bar_inactive_color: 0.7, 0.7, 0.7, 0.7
+
+    scroll_type: ['bars', 'content']
+    spacing: 4
+    text: ''
+
+    GridLayout:
+        id: servers_list
+        cols: 1
+        height: self.minimum_height
+        width: self.parent.width - self.parent.bar_width
+        size_hint_y: None
+        spacing: root.spacing
+
+<ServerListRefresh@BoxLayout>:
+    size_hint: 1, None
+    height: contents.height
+    opacity: 0
+
+    Widget
+
+    HoverButtonLeft:
+        id: contents
+        on_release: root.clicked(*args)
+        font_size: 14
+
+        text_prefix: ''
+        width: 30
+
+        Image:
+            source: app.resource_path('images/refresh.png')
+            #pos: root.width / 2 - self.width / 2, root.top - self.height - 7
+            size_hint: None, None
+            size: self.texture_size
+            pos: self.parent.pos

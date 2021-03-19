@@ -1,0 +1,15 @@
+build
+dist
+kivy-*
+kivy.*
+*.pyc
+*.sublime-*
+@*
+tags
+DEV
+build.sha1
+pyinstaller.bat
+*.exe
+devmode.conf
+.settings
+.idea

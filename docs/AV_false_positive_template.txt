@@ -1,0 +1,17 @@
+Hello,
+
+I'm the author of Bulletproof Arma Launcher, a software that is an installer and launcher for mods for the game Arma 3.
+
+The launcher is written in python and then wrapped with PyInstaller to create an exe file. Its sources are freely available here:
+https://github.com/overfl0/Bulletproof-Arma-Launcher
+
+The wrapped exe can be downloaded here:
+https://github.com/overfl0/Bulletproof-Arma-Launcher/releases
+Direct link: <link here>
+
+Unfortunately, the launcher is regarded as a threat by your antivirus, as can be seen on this Virustotal report:
+<virustotal report link here>
+
+Please update your AV rules/patterns. Also please note that this software is still being developed, which means new versions are going to be released in the future and the code *will* change. This means, whitelisting based on file checksums will not work.
+Please RSVP as soon as possible!
+
