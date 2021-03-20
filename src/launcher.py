@@ -164,7 +164,7 @@ def start():
             launcher_app = None
 
             if settings.get('update'):
-                print ('launching self updater')
+                print 'launching self updater'
                 launcher_app = SelfUpdaterApp(settings).run()
 
             else:
